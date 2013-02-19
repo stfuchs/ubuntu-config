@@ -72,4 +72,10 @@ if [ ! -f $DIR/grc/v$GRC_VERSION ]; then
     rm -rfv $DIR/tmp
 fi
 
-# TODO: download and set up terminator
+if [ ! -f $DIR/terminator/terminator ]; then
+    cp -rf terminator $DIR/terminator
+    ln -s $DIR/terminator/terminator $UROOT/bin/terminator
+    mv $DIR/terminator/doc/terminator.1 $UROOT/usr/share/man/man1
+    mkdir -pv $UROOT/usr/share/man/man5
+    mv $DIR/terminator/doc/terminator_config.5 $UROOT/usr/share/man/man1
+fi
