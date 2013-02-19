@@ -1,0 +1,1 @@
+My script to set up personal configurations on new ubuntu user accounts
