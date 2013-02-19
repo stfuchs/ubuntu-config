@@ -78,4 +78,6 @@ if [ ! -f $DIR/terminator/terminator ]; then
     mv $DIR/terminator/doc/terminator.1 $UROOT/usr/share/man/man1
     mkdir -pv $UROOT/usr/share/man/man5
     mv $DIR/terminator/doc/terminator_config.5 $UROOT/usr/share/man/man1
+    mkdir -pv $HOME/.config/terminator
+    mv $DIR/terminator/config $HOME/.config/terminator/
 fi
