@@ -21,13 +21,13 @@ mkdir -v $DIR
 
 # set up bash:
 echo "\n\n################## setting up bash configuration #################\n"
-cp -rfv bash/ $DIR
+#cp -rfv bash/ $DIR
 
 if [ -f $HOME/.bash_aliases ]; then
     mv $HOME/.bash_aliases $HOME/.bash_aliases_bak
 fi
 echo '#!/bin/sh' > $HOME/.bash_aliases
-echo "source $DIR/bash/bashrc" >> $HOME/.bash_aliases
+echo "source \$HOME/git/ubuntu_config/bash/bashrc" >> $HOME/.bash_aliases
 
 # create new root for user installation:
 echo "\n\n################## creating new root for user installation #################\n"
@@ -42,12 +42,12 @@ echo "export MANPATH=$UROOT/usr/share/man:\$MANPATH" >> $DIR/bash/bashrc
 
 # set up emacs:
 echo "\n\n################## setting up emacs configuration #################\n"
-cp -rfv emacs/ $DIR
+#cp -rfv emacs/ $DIR
 if [ -f $HOME/.emacs.el ]; then
     mv $HOME/.emacs.el $HOME/.emacs_bak.el
 fi
-echo "(add-to-list 'load-path \"$DIR/emacs\")" > $HOME/.emacs.el
-echo "(add-to-list 'load-path \"$DIR/emacs/themes\")" >> $HOME/.emacs.el
+echo "(add-to-list 'load-path \"$HOME/git/ubuntu_config/emacs\")" > $HOME/.emacs.el
+echo "(add-to-list 'load-path \"$HOME/git/ubuntu_config/emacs/themes\")" >> $HOME/.emacs.el
 echo "(require 'my_config)" >> $HOME/.emacs.el
 mkdir -pv $HOME/.emacs.d/cache
 
