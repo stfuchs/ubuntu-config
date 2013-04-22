@@ -64,6 +64,8 @@ findcpp() { find . -type f -name '*.cpp' -o -name '*.hpp' -o -name '*.h' | paral
 masterUri() { export ROS_MASTER_URI="http://$@:11311"; }
 mkcd() { mkdir $@ && cd $@; }
 
+#function parseGitBranch { git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/git:\1/'; }
+
 if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
     source /opt/ros/groovy/setup.bash
     ROS_PACKAGE_PATH=~/git/ros:$ROS_PACKAGE_PATH
@@ -72,6 +74,13 @@ fi
 export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/lib:$LD_LIBRARY_PATH
 export PATH=/usr/local/cuda-5.0/bin:$PATH
 
+#export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+cbg='\[\e[30;1m\]' #dark gray
+cfg1='\[\033[0;33m\]' #yellow
+cfg2='\[\033[0;32m\]' #green
+cquit='\[\033[0m\]' #cancel color
+
+PS1="$cbg\\__($cfg1\t$cbg)__($cfg2\u$cquit@$cfg2\h$cbg)__($cfg2\w$cbg)\n \\__\$ $cquit"
 
 ##### Some things to install: #####
 # parallel: http://www.gnu.org/software/parallel/
