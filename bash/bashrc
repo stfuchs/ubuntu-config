@@ -34,12 +34,9 @@ alias uni='cd ~/Dropbox/Docs/Inf01'
 alias em='emacs -nw'
 alias gemacs='setsid emacs'
 
-if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
-    alias mm='grc -c /usr/share/grc/conf.gcc -e -s make -j 8'
-else
-    alias mm='grc -c ~/.local/share/grc/conf.gcc -e -s make -j 8'
-    alias mr='grc -c ~/.local/share/grc/conf.gcc -e -s rosmake --pjobs=8'
-fi
+
+alias mm='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s make -j 8'
+alias mr='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s rosmake --pjobs=8'
 
 
 alias gitk='git log --graph --decorate'
@@ -59,6 +56,8 @@ alias pack='tar cfz'
 findheader() { find . -type f -name '*.h' | parallel -k "grep -Hn --color=always '$@' "; }
 findsource() { find . -type f -name '*.cpp' -o -name '*.hpp' | parallel -k "grep -Hn --color=always '$@' "; }
 findcpp() { find . -type f -name '*.cpp' -o -name '*.hpp' -o -name '*.h' | parallel -k "grep -Hn --color=always '$@' "; }
+
+findpy() { find . -type f -name '*.py' | parallel -k "grep -Hn --color=always '$@' "; }
 
 masterUri() { export ROS_MASTER_URI="http://$@:11311"; }
 

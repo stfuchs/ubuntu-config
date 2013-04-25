@@ -81,3 +81,16 @@ if [ ! -f $DIR/terminator/terminator ]; then
     mkdir -pv $HOME/.config/terminator
     mv $DIR/terminator/config $HOME/.config/terminator/
 fi
+
+EMACS_VERSTION=24.2
+if [ ! -f $DIR/emacs/emacs ]; then
+    mkdir -pv $DIR/tmp
+    wget -P $DIR/tmp/ http://ftp.gnu.org/pub/gnu/emacs/emacs-$EMACS_VERSION.tar.gz
+    tar xf $DIR/tmp/emacs-$EMACS_VERSION.tar.gz
+    OLDDIR=$PWD
+    #cd $DIR/tmp/emacs-$EMACS_VERSION/
+    #./configure --with-gif=no
+    #make
+    #make install prefix:=$HOME/.private_ubuntu_config/user_root/usr/
+    #cd $OLDDIR
+    #rm -rfv $DIR/tmp
