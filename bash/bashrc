@@ -6,6 +6,7 @@ if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
     alias apug='sudo aptitude full-upgrade'
     alias aps='aptitude show'
     alias srm='trash-put'
+    alias matlabnw='matlab -nojvm -nodisplay -nosplash'
 else
     alias trash='gvfs-trash'
     alias githelper='~/git/setup/githelper'
@@ -65,6 +66,11 @@ findpy() { find . -type f -name '*.py' | parallel -k "grep -Hn --color=always '$
 
 masterUri() { export ROS_MASTER_URI="http://$@:11311"; }
 mkcd() { mkdir $@ && cd $@; }
+imgs2mjpeg()
+{
+    ffmpeg -f image2 -i $1 -c:v libx264 -preset ultrafast -q:v 0 $2.mp4;
+    ffmpeg -i $2.mp4 -c:v mjpeg -q:v 0 $2.avi;
+}
 
 #function parseGitBranch { git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/git:\1/'; }
 
