@@ -37,8 +37,8 @@ mkdir -pv $UROOT/usr/bin
 mkdir -pv $UROOT/usr/share/man/man1
 mkdir -pv $UROOT/etc
 
-echo "export PATH=$UROOT/bin:$UROOT/usr/bin:\$PATH" >> $DIR/bash/bashrc
-echo "export MANPATH=$UROOT/usr/share/man:\$MANPATH" >> $DIR/bash/bashrc
+echo "export PATH=$UROOT/bin:$UROOT/usr/bin:\$PATH" >> $HOME/.bash_aliases
+echo "export MANPATH=$UROOT/usr/share/man:\$MANPATH" >> $HOME/.bash_aliases
 
 # set up emacs:
 echo "\n\n################## setting up emacs configuration #################\n"
@@ -82,15 +82,17 @@ if [ ! -f $DIR/terminator/terminator ]; then
     mv $DIR/terminator/config $HOME/.config/terminator/
 fi
 
-EMACS_VERSTION=24.2
+EMACS_VERSION=24.3
 if [ ! -f $DIR/emacs/emacs ]; then
     mkdir -pv $DIR/tmp
     wget -P $DIR/tmp/ http://ftp.gnu.org/pub/gnu/emacs/emacs-$EMACS_VERSION.tar.gz
     tar xf $DIR/tmp/emacs-$EMACS_VERSION.tar.gz
+    mv emacs-$EMACS_VERSION $DIR/tmp/
     OLDDIR=$PWD
     #cd $DIR/tmp/emacs-$EMACS_VERSION/
     #./configure --with-gif=no
     #make
-    #make install prefix:=$HOME/.private_ubuntu_config/user_root/usr/
+    #make install prefix:=$HOME/.privat_ubuntu_config/user_root/usr/
     #cd $OLDDIR
     #rm -rfv $DIR/tmp
+fi
