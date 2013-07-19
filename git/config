@@ -1,0 +1,16 @@
+[user]
+        name = Steffen Fuchs
+        email = st.fuchs.tr@gmail.com
+[alias]
+        ci = commit
+        co = checkout
+[color]
+        status = auto
+        branch = auto
+        interactive = auto
+        diff = auto
+[merge]
+        conflictstyle = diff3
+        tool = mymerge
+[mergetool "mymerge"]
+        cmd = $HOME/git/ubuntu_config/git/gitmerge.sh $BASE $LOCAL $REMOTE $MERGED

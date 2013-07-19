@@ -89,8 +89,8 @@ if [ ! -f $DIR/emacs/emacs ]; then
     tar xf $DIR/tmp/emacs-$EMACS_VERSION.tar.gz
     mv emacs-$EMACS_VERSION $DIR/tmp/
     OLDDIR=$PWD
-    #cd $DIR/tmp/emacs-$EMACS_VERSION/
-    #./configure --with-gif=no
+    cd $DIR/tmp/emacs-$EMACS_VERSION/
+    ./configure --with-gif=no --prefix=$HOME/.privat_ubuntu_config/user_root/usr/
     #make
     #make install prefix:=$HOME/.privat_ubuntu_config/user_root/usr/
     #cd $OLDDIR

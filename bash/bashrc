@@ -81,6 +81,7 @@ fi
 
 export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/lib:$LD_LIBRARY_PATH
 export PATH=/usr/local/cuda-5.0/bin:$PATH
+export GIT_CONFIG=~/git/ubuntu_config/git/config
 
 #export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 cbg='\[\033[1;30m\]' #dark gray
