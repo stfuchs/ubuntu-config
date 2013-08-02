@@ -97,3 +97,8 @@ PS1=$cbg'|'$cfg1'\t'$cbg'|'$cfg2'\u'$cquit'@'$cfg2'\h'$cbg'|'$cfg2'\w'$cbg'$(__g
 # parallel: http://www.gnu.org/software/parallel/
 # Generic colorizer: http://kassiopeia.juls.savba.sk/~garabik/software/grc.html
 
+# Printer stuff:
+# list printer: lpstat -p -d
+# print: lpr -P "printername" filename
+# list options: lpoptions -l
+# change options for user: lpoptions -o optionname=value
