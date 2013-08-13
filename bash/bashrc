@@ -35,6 +35,9 @@ alias uni='cd ~/Dropbox/Docs/Inf01'
 alias em='emacs -nw'
 alias gemacs='setsid emacs'
 alias parallel='parallel --gnu'
+alias hcat='pygmentize -f terminal256 -O style=native -g'
+alias hcat_emacs='hcat ~/git/ubuntu_config/emacs/my_config.el'
+alias hcat_bash='hcat ~/git/ubuntu_config/bash/bashrc'
 
 if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
     alias mm='grc -c /usr/share/grc/conf.gcc -e -s make -j 4'

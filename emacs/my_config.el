@@ -5,7 +5,7 @@
 (setq backup-directory-alist `(("." . "~/.emacs_backup_files")))
 
 ;; --- Set C Style ---
-(setq c-default-style "awk")
+(setq c-default-style "bsd")
 (setq c-basic-offset 2)
 (setq-default indent-tabs-mode nil)
 (setq default-tab-width 2)
@@ -18,20 +18,26 @@
     (local-set-key (kbd "C-c <up>")    'hs-hide-all)
     (local-set-key (kbd "C-c <down>")  'hs-show-all)
     (hs-minor-mode t)
-    (hs-hide-all)))
+    (hs-hide-all)
+    (c-toggle-auto-state 1) ; new line after certain char
+    (c-toggle-hungry-state 1))) ; eat all whitespace until first char
 
 (setq display-time-day-and-date t
   display-time-24hr-format t)
 (display-time)
 
-;whitespace http://www.emacswiki.org/emacs/WhiteSpace
+;; --- whitespace http://www.emacswiki.org/emacs/WhiteSpace
+; turns on whitespace mode only for tabs
+; highlights tabs, 80-Column-Rule, trailing whitespaces
 (require 'whitespace)
-(setq whitespace-style '(face tab-mark trailing)) ;turns on white space mode only for tabs
-(global-whitespace-mode 1)
+(setq whitespace-style '(face tab-mark lines-tail trailing))
+(global-whitespace-mode t)
 
 (setq show-paren-delay 0)           ; how long to wait?
 (show-paren-mode t)                 ; turn paren-mode on
 (setq show-paren-style 'parenthesis) ; alternatives are 'parenthesis' and 'mixed 'expression
+
+
 
 ;; ido makes competing buffers and finding files easier
 ;; http://www.emacswiki.org/cgi-bin/wiki/InteractivelyDoThings
