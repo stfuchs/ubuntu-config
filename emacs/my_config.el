@@ -106,7 +106,7 @@
 
 ;; --- Customize Layout ---
 (tool-bar-mode -1) ;; the buttons bar
-(menu-bar-mode -1) ;; the text bar (graphical and console)
+;;(menu-bar-mode -1) ;; the text bar (graphical and console)
 (toggle-scroll-bar -1)
 (require 'color-theme)
 (color-theme-initialize)
@@ -149,6 +149,22 @@
 ;(global-set-key (kbd "M-g s") 'git-status)
 ;(global-set-key (kbd "M-g b") 'git-branch)
 
+;; --- Latex stuff ---
+;;(load "auctex.el" nil t t)
+;;(setq TeX-auto-save t)
+;;(setq TeX-parse-self t)
+(setq TeX-PDF-mode t) ;; .pdf statt .dvi per default
+;;(global-auto-revert-mode t) ;; auto refresh when files change
+
+;;direkte Rechtschreib Korrektur:
+;;(add-hook ’LaTeX-mode-hook ’flyspell-mode)
+;;(setq-default ispell-program-name "aspell") ;; aspell ist besser als ispell.
+;; Deutsche Rechtschreibung falls \usepackage{ngerman}
+;; oder german benutzt wird
+;;(add-hook ’TeX-language-de-hook
+;;  (function (lambda () (ispell-change-dictionary "german8"))))
+
+
 ;; --- Fix Selection in Terminal Mode ---
 (if(equal "xterm" (tty-type))
   (define-key input-decode-map "\e[1;2A" [S-up]))
@@ -162,3 +178,10 @@
 ;(setq ff-search-directories '("." "../src" "../include"))
 ;(global-set-key (kbd "C-c o") 'ff-find-other-file)
 (provide 'my_config)
+
+
+;; ----------------------------
+;; --- Some useful commands ---
+;; ----------------------------
+;; M-x untabify
+;; M-X delete-trailing-whitespace
