@@ -9,6 +9,7 @@
 (setq c-basic-offset 2)
 (setq-default indent-tabs-mode nil)
 (setq default-tab-width 2)
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 ;; --- show/hide code blocks ---
 (add-hook 'c-mode-common-hook
