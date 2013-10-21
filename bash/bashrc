@@ -81,6 +81,7 @@ imgs2mjpeg()
 if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
     source /opt/ros/groovy/setup.bash
     ROS_PACKAGE_PATH=~/git/ros:$ROS_PACKAGE_PATH
+    ROS_PACKAGE_PATH=~/git/care-o-bot:$ROS_PACKAGE_PATH
 fi
 
 export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/lib:$LD_LIBRARY_PATH

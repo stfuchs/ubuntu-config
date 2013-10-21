@@ -1,6 +1,3 @@
-[user]
-        name = Steffen Fuchs
-        email = st.fuchs.tr@gmail.com
 [alias]
         ci = commit
         co = checkout
@@ -14,3 +11,5 @@
         tool = mymerge
 [mergetool "mymerge"]
         cmd = $HOME/git/ubuntu_config/git/gitmerge.sh $BASE $LOCAL $REMOTE $MERGED
+[user]
+	name = Steffen Fuchs

@@ -143,10 +143,13 @@
 ;;    (push (concat (ros-package-path "rosemacs") "/rng-schemas.xml") rng-schema-locating-files)
 ;;  (error nil))
 
+
 ;; --- Auto Modes ---
 (add-to-list 'auto-mode-alist '("\.launch$" . nxml-mode))
 (add-to-list 'auto-mode-alist '("manifest.xml" . nxml-mode))
-(add-to-list 'auto-mode-alist '("CMakeLists.txt" . makefile-mode))
+(require 'cmake-mode)
+(add-to-list 'auto-mode-alist '("CMakeLists.txt" . cmake-mode))
+(add-to-list 'auto-mode-alist '("\.cmake" . cmake-mode))
 
 ;; --- Git stuff ---
 (add-to-list 'load-path "~/git/git-emacs")
