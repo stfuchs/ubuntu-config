@@ -149,7 +149,8 @@
 (add-to-list 'auto-mode-alist '("manifest.xml" . nxml-mode))
 (require 'cmake-mode)
 (add-to-list 'auto-mode-alist '("CMakeLists.txt" . cmake-mode))
-(add-to-list 'auto-mode-alist '("\.cmake" . cmake-mode))
+(add-to-list 'auto-mode-alist '("\.cmake$" . cmake-mode))
+(add-to-list 'auto-mode-alist '("\.m$" . octave-mode))
 
 ;; --- Git stuff ---
 (add-to-list 'load-path "~/git/git-emacs")
