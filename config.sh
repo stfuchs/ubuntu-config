@@ -8,7 +8,7 @@ if [ $# -lt 1 ];  then
     echo "please provide install directory" && exit 1
 fi
 
-DIR=$1.privat_ubuntu_config
+DIR=$1apps
 
 mkdir -v $DIR
 

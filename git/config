@@ -2,7 +2,7 @@
         ci = commit
         co = checkout
 [color]
-        status = auto
+	status = always
         branch = auto
         interactive = auto
         diff = auto
@@ -13,3 +13,4 @@
         cmd = $HOME/git/ubuntu_config/git/gitmerge.sh $BASE $LOCAL $REMOTE $MERGED
 [user]
 	name = Steffen Fuchs
+	email = st.fuchs.tr@gmail.com

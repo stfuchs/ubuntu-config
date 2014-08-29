@@ -9,29 +9,11 @@ if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
     alias matlabnw='matlab -nojvm -nodisplay -nosplash'
 else
     alias trash='gvfs-trash'
-    alias githelper='~/git/setup/githelper'
-    alias githelper-merge-def='githelper -s cob_command_tools,cob_common,cob_driver,cob_environments,cob_extern,cob_robots,cob_simulation,schunk_modular_robotics merge'
-    alias ssh1='ssh cob-stud-1'
-    alias ssh3='ssh cob-stud-3'
-    alias ssh4='ssh cob-stud-4'
-    alias ssh5='ssh cob-stud-5'
-    alias ssh6='ssh cob-stud-6'
-    alias ssh7='ssh cob-stud-7'
-    alias ssh8='ssh cob-stud-8'
-    alias ssh9='ssh cob-stud-9'
-    alias cob331='ssh -X cob3-3-pc1'
-    alias cob332='ssh -X cob3-3-pc2'
-    alias cob333='ssh -X cob3-3-pc3'
-    alias go='roscd cob_environment_perception_intern'
-    alias tools='roscd cob_3d_mapping_tools'
-    alias features='roscd cob_3d_mapping_features'
     alias rviz='rosrun rviz rviz'
-    alias coffeetime='rosmake --pre-clean cob_environment_perception_intern'
 fi
 
 alias resource='source ~/.bashrc'
 alias ..='cd ..'
-alias uni='cd ~/Dropbox/Docs/Inf01'
 alias em='emacs -nw'
 alias gemacs='setsid emacs'
 alias parallel='parallel --gnu'
@@ -42,8 +24,8 @@ alias hcat_bash='hcat ~/git/ubuntu_config/bash/bashrc'
 if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
     alias mm='grc -c /usr/share/grc/conf.gcc -e -s make -j 4'
 else
-    alias mm='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s make -j 8'
-    alias mr='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s rosmake --pjobs=8'
+    alias mm='grc -c ~/apps/share/grc/conf.gcc -e -s make -j 8'
+    alias mr='grc -c ~/apps/share/grc/conf.gcc -e -s rosmake --pjobs=8'
 fi
 
 
@@ -86,6 +68,7 @@ fi
 
 export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/lib:$LD_LIBRARY_PATH
 export PATH=/usr/local/cuda-5.0/bin:$PATH
+export PATH=~/apps/bin:$PATH
 export GIT_CONFIG=~/git/ubuntu_config/git/config
 
 #export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
