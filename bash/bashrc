@@ -14,8 +14,8 @@ fi
 
 alias resource='source ~/.bashrc'
 alias ..='cd ..'
-alias em='emacs -nw'
-alias gemacs='setsid emacs'
+alias em='emacs -nw -q -l ~/git/ubuntu_config/emacs/my_config.el'
+alias gemacs='setsid emacs -q -l ~/git/ubuntu_config/emacs/my_config.el'
 alias parallel='parallel --gnu'
 alias hcat='pygmentize -f terminal256 -O style=native -g'
 alias hcat_emacs='hcat ~/git/ubuntu_config/emacs/my_config.el'

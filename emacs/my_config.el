@@ -1,3 +1,5 @@
+(add-to-list 'load-path "~/git/ubuntu_config/emacs/")
+
 ;; --- Hide Init Screen
 (setq inhibit-splash-screen t)
 
