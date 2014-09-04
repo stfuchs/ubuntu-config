@@ -44,6 +44,7 @@ if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
 else
     alias mm='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s make -j 8'
     alias mr='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s rosmake --pjobs=8'
+    alias cm='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s catkin_make'
 fi
 
 
