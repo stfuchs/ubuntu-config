@@ -14,8 +14,8 @@ fi
 
 alias resource='source ~/.bashrc'
 alias ..='cd ..'
-alias em='emacs -nw'
-alias gemacs='setsid emacs'
+alias em='emacs -nw -q -l ~/git/ubuntu_config/emacs/my_config.el'
+alias gemacs='setsid emacs -q -l ~/git/ubuntu_config/emacs/my_config.el'
 alias parallel='parallel --gnu'
 alias hcat='pygmentize -f terminal256 -O style=native -g'
 alias hcat_emacs='hcat ~/git/ubuntu_config/emacs/my_config.el'
@@ -24,8 +24,9 @@ alias hcat_bash='hcat ~/git/ubuntu_config/bash/bashrc'
 if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
     alias mm='grc -c /usr/share/grc/conf.gcc -e -s make -j 4'
 else
-    alias mm='grc -c ~/apps/share/grc/conf.gcc -e -s make -j 8'
-    alias mr='grc -c ~/apps/share/grc/conf.gcc -e -s rosmake --pjobs=8'
+    alias mm='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s make -j 8'
+    alias mr='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s rosmake --pjobs=8'
+    alias cm='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s catkin_make'
 fi
 
 
