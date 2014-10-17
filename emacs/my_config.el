@@ -16,6 +16,9 @@
 ;; --- show/hide code blocks ---
 (add-hook 'c-mode-common-hook
   (lambda()
+    (require 'doxymacs)
+    (doxymacs-mode t)
+    (doxymacs-font-lock)
     (local-set-key (kbd "C-c <right>") 'hs-show-block)
     (local-set-key (kbd "C-c <left>")  'hs-hide-block)
     (local-set-key (kbd "C-c <up>")    'hs-hide-all)
@@ -32,9 +35,9 @@
 ;; --- whitespace http://www.emacswiki.org/emacs/WhiteSpace
 ; turns on whitespace mode only for tabs
 ; highlights tabs, 80-Column-Rule, trailing whitespaces
-(require 'whitespace)
-(setq whitespace-style '(face tab-mark lines-tail trailing))
-(global-whitespace-mode t)
+;(require 'whitespace)
+;(setq whitespace-style '(face tab-mark lines-tail trailing))
+;(global-whitespace-mode t)
 
 (setq show-paren-delay 0)           ; how long to wait?
 (show-paren-mode t)                 ; turn paren-mode on
