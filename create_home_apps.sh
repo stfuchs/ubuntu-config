@@ -57,14 +57,20 @@ if [ ! -f $HOME/apps/usr/share/emacs/v$EMACS_VERSION ]; then
     if [ ! -f $HOME/apps/tmp/emacs-$EMACS_VERSION.tar.gz ]; then
         mkdir -pv $HOME/apps/tmp
         wget -P $HOME/apps/tmp/ http://ftp.gnu.org/pub/gnu/emacs/emacs-$EMACS_VERSION.tar.gz
+        wget -P $HOME/apps/tmp/ "http://downloads.sourceforge.net/project/doxymacs/doxymacs/1.8.0/doxymacs-1.8.0.tar.gz"
     fi
     if [ ! -f $HOME/apps/tmp/emacs-$EMACS_VERSION/configure ]; then
         tar -vxf $HOME/apps/tmp/emacs-$EMACS_VERSION.tar.gz -C $HOME/apps/tmp/
+        tar -vxf $HOME/apps/tmp/doxymacs-1.8.0.tar.gz -C $HOME/apps/tmp/
     fi
     cd $HOME/apps/tmp/emacs-$EMACS_VERSION/
     ./configure --with-gif=no --prefix=$HOME/apps/usr
     make
     make install prefix:=$HOME/apps/usr
     touch $HOME/apps/usr/share/emacs/v$EMACS_VERSION
+    cd $HOME/apps/tmp/doxymacs-1.8.0/
+    ./configure --prefix=$HOME/apps/usr
+    make
+    make install prefix:=$HOME/apps/usr
     rm -rfv $HOME/apps/tmp
 fi
