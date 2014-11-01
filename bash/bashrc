@@ -1,10 +1,6 @@
 #!/bin/sh
 
 if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
-    alias api='sudo aptitude install'
-    alias apud='sudo aptitude update'
-    alias apug='sudo aptitude full-upgrade'
-    alias aps='aptitude show'
     alias srm='trash-put'
     alias matlabnw='matlab -nojvm -nodisplay -nosplash'
 else
@@ -12,6 +8,10 @@ else
     alias rviz='rosrun rviz rviz'
 fi
 
+alias api='sudo aptitude install'
+alias apud='sudo aptitude update'
+alias apug='sudo aptitude full-upgrade'
+alias aps='aptitude show'
 alias resource='source ~/.bashrc'
 alias ..='cd ..'
 alias em='emacs -nw -q -l ~/git/ubuntu_config/emacs/my_config.el'
@@ -24,11 +24,10 @@ alias hcat_bash='hcat ~/git/ubuntu_config/bash/bashrc'
 if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
     alias mm='grc -c /usr/share/grc/conf.gcc -e -s make -j 4'
 else
-    alias mm='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s make -j 8'
-    alias mr='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s rosmake --pjobs=8'
-    alias cm='grc -c ~/.privat_ubuntu_config/grc/conf.gcc -e -s catkin_make'
+    alias mm='grc -c ~/apps/usr/share/grc-1.5/conf.gcc -e -s make -j 8'
+    alias mr='grc -c ~/apps/usr/share/grc-1.5/conf.gcc -e -s rosmake --pjobs=8'
+    alias cm='grc -c ~/apps/usr/share/grc-1.5/conf.gcc -e -s catkin_make'
 fi
-
 
 alias gitk='git log --graph --decorate'
 alias treel='tree -fi'
@@ -59,6 +58,33 @@ imgs2mjpeg()
     ffmpeg -i $2.mp4 -c:v mjpeg -q:v 0 $2.avi;
 }
 
+colors() {
+    local fgc bgc vals seq0
+
+    printf "Color escapes are %s\n" '\e[${value};...;${value}m'
+    printf "Values 30..37 are \e[33mforeground colors\e[m\n"
+    printf "Values 40..47 are \e[43mbackground colors\e[m\n"
+    printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
+
+    # foreground colors
+    for fgc in {30..37}; do
+        # background colors
+        for bgc in {40..47}; do
+            fgc=${fgc#37} # white
+            bgc=${bgc#40} # black
+
+            vals="${fgc:+$fgc;}${bgc}"
+            vals=${vals%%;}
+
+            seq0="${vals:+\e[${vals}m}"
+            printf "  %-9s" "${seq0:-(default)}"
+            printf " ${seq0}TEXT\e[m"
+            printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
+            done
+        echo; echo
+        done
+}
+
 #function parseGitBranch { git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/git:\1/'; }
 
 if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
@@ -69,13 +95,17 @@ fi
 
 export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/lib:$LD_LIBRARY_PATH
 export PATH=/usr/local/cuda-5.0/bin:$PATH
-export PATH=~/apps/bin:$PATH
+export PATH=$HOME/apps/bin:$PATH
+export PATH=$HOME/apps/usr/bin:$PATH
+export MANPATH=$HOME/apps/usr/share/man:$MANPATH
 export GIT_CONFIG=~/git/ubuntu_config/git/config
 
 #export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 cbg='\[\033[1;30m\]' #dark gray
 cfg1='\[\033[0;33m\]' #yellow
-cfg2='\[\033[0;32m\]' #green
+#cfg2='\[\033[0;32m\]' #green
+#cfg1='\[\033[0;31m\]' #red
+cfg2='\[\033[0;36m\]' #cyan
 cquit='\[\033[0m\]' #cancel color
 
 #PS1="$cbg\\__($cfg1\t$cbg)__($cfg2\u$cquit@$cfg2\h$cbg)__($cfg2\w$cbg)\n \\__$(__git_ps1)\$ $cquit"
