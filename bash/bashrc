@@ -1,21 +1,14 @@
 #!/bin/sh
 
-if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
-    alias srm='trash-put'
-    alias matlabnw='matlab -nojvm -nodisplay -nosplash'
-else
-    alias trash='gvfs-trash'
-    alias rviz='rosrun rviz rviz'
-fi
 
 alias api='sudo aptitude install'
 alias apud='sudo aptitude update'
 alias apug='sudo aptitude full-upgrade'
 alias aps='aptitude show'
+alias appo='apt-cache policy'
 alias resource='source ~/.bashrc'
 alias ..='cd ..'
 alias em='emacs -nw -q -l ~/git/ubuntu_config/emacs/my_config.el'
-alias gemacs='setsid emacs -q -l ~/git/ubuntu_config/emacs/my_config.el'
 alias parallel='parallel --gnu'
 alias hcat='pygmentize -f terminal256 -O style=native -g'
 alias hcat_emacs='hcat ~/git/ubuntu_config/emacs/my_config.el'
@@ -27,8 +20,10 @@ else
     alias mm='grc -c ~/apps/usr/share/grc-1.5/conf.gcc -e -s make -j 8'
     alias mr='grc -c ~/apps/usr/share/grc-1.5/conf.gcc -e -s rosmake --pjobs=8'
     alias cm='grc -c ~/apps/usr/share/grc-1.5/conf.gcc -e -s catkin_make'
+    alias gemacs='setsid emacs -q -l ~/git/ubuntu_config/emacs/my_config.el'
 fi
 
+alias rviz='rosrun rviz rviz'
 alias gitk='git log --graph --decorate'
 alias treel='tree -fi'
 alias du='du -h --max-depth=0'
@@ -87,14 +82,8 @@ colors() {
 
 #function parseGitBranch { git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/git:\1/'; }
 
-if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
-    source /opt/ros/groovy/setup.bash
-    ROS_PACKAGE_PATH=~/git/ros:$ROS_PACKAGE_PATH
-    ROS_PACKAGE_PATH=~/git/care-o-bot:$ROS_PACKAGE_PATH
-fi
-
-export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/lib:$LD_LIBRARY_PATH
-export PATH=/usr/local/cuda-5.0/bin:$PATH
+#export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/lib:$LD_LIBRARY_PATH
+#export PATH=/usr/local/cuda-5.0/bin:$PATH
 export PATH=$HOME/apps/bin:$PATH
 export PATH=$HOME/apps/usr/bin:$PATH
 export MANPATH=$HOME/apps/usr/share/man:$MANPATH
