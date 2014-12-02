@@ -96,6 +96,7 @@ fi
 export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/lib:$LD_LIBRARY_PATH
 export PATH=/usr/local/cuda-5.0/bin:$PATH
 export PATH=$HOME/apps/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/apps/usr/bin:$PATH
 export MANPATH=$HOME/apps/usr/share/man:$MANPATH
 export GIT_CONFIG=~/git/ubuntu_config/git/config
