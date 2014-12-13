@@ -27,7 +27,9 @@ alias rviz='rosrun rviz rviz'
 alias gitk='git log --graph --decorate'
 alias treel='tree -fi'
 alias du='du -h --max-depth=0'
-
+alias ipy='ipython --pylab'
+alias ipynb='ipython notebook'
+alias ipycon='ipython console --existing'
 alias pdf='evince'
 # tar help:
 #   c: create
