@@ -20,6 +20,7 @@ alias parallel='parallel --gnu'
 alias hcat='pygmentize -f terminal256 -O style=native -g'
 alias hcat_emacs='hcat ~/git/ubuntu_config/emacs/my_config.el'
 alias hcat_bash='hcat ~/git/ubuntu_config/bash/bashrc'
+alias compile='g++ -W -Wall -Wextra -pedantic -std=c++0x'
 
 if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
     alias mm='grc -c /usr/share/grc/conf.gcc -e -s make -j 4'
@@ -95,6 +96,7 @@ fi
 
 export LD_LIBRARY_PATH=/usr/local/cuda-5.0/lib64:/lib:$LD_LIBRARY_PATH
 export PATH=/usr/local/cuda-5.0/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/apps/bin:$PATH
 export PATH=$HOME/apps/usr/bin:$PATH
 export MANPATH=$HOME/apps/usr/share/man:$MANPATH
