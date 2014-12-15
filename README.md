@@ -21,16 +21,17 @@ available, or when software does not need an installation
 	echo '#!/bin/sh' > $HOME/.bash_aliases
 	echo 'source $HOME/git/ubuntu_config/bash/bashrc' >> $HOME/.bash_aliases
 	source $HOME/.bashrc
-  api build-essential
-  echo "deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe" >> /etc/apt/sources.list
-  apud
-  sudo apt-get --allow-unauthenticated install sur5r-keyring
-  apud
+	api build-essential
+
+	echo "deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe" >> /etc/apt/sources.list
+	apud
+	sudo apt-get --allow-unauthenticated install sur5r-keyring
+	apud
 	api i3
-  sudo add-apt-repository ppa:xorg-edgers/ppa
-  apud
-  api nvidia-* #check version on: http://www.nvidia.com/Download/index.aspx
-  sudo software-properites-gtk
+	sudo add-apt-repository ppa:xorg-edgers/ppa
+	apud
+	api nvidia-* #check version on: http://www.nvidia.com/Download/index.aspx
+	sudo software-properites-gtk
 
 	sudo apt-get autoremove --purge ubuntuone-client-data
 	sudo apt-get autoremove --purge software-center
@@ -53,10 +54,17 @@ available, or when software does not need an installation
 	sudo apt-get autoremove --purge overlay-scrollbar*
 	gsettings set org.gnome.desktop.background show-desktop-icons false
 
-  api libxss1 libappindicator1 libindicator7
+	api libxss1 libappindicator1 libindicator7
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg -i google-chrome*.deb
 
+	api texlive texlive-lang-german texlive-latex-extra
+	api python pip
+	sudo easy_install pip
+	api python-dev
+	api libfreetype6-dev libpng-dev gfortran
+	sudo pip install ipython[all]
+	sudo pip install matplotlib[all]
 
 ## On Mac: ##
 	sudo add-apt-repository ppa:mactel-support
