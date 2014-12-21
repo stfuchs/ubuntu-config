@@ -35,9 +35,10 @@
 ;; --- whitespace http://www.emacswiki.org/emacs/WhiteSpace
 ; turns on whitespace mode only for tabs
 ; highlights tabs, 80-Column-Rule, trailing whitespaces
-;(require 'whitespace)
+(require 'whitespace)
 ;(setq whitespace-style '(face tab-mark lines-tail trailing))
-;(global-whitespace-mode t)
+(setq whitespace-style '(face tab-mark))
+(global-whitespace-mode t)
 
 (setq show-paren-delay 0)           ; how long to wait?
 (show-paren-mode t)                 ; turn paren-mode on
