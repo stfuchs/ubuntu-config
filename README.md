@@ -31,6 +31,7 @@ available, or when software does not need an installation
   apud
   api nvidia-* #check version on: http://www.nvidia.com/Download/index.aspx
   sudo software-properites-gtk
+  gconftool-2 --load $HOME/git/ubuntu_config/gconf/gnome-terminal.gconf.xml
 
 	sudo apt-get autoremove --purge ubuntuone-client-data
 	sudo apt-get autoremove --purge software-center
