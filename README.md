@@ -28,23 +28,11 @@ available, or when software does not need an installation
 	sudo apt-get --allow-unauthenticated install sur5r-keyring
 	apud
 	api i3
-<<<<<<< HEAD
-  sudo add-apt-repository ppa:xorg-edgers/ppa
-  apud
-  api nvidia-* #check version on: http://www.nvidia.com/Download/index.aspx
-  sudo software-properites-gtk
-  gconftool-2 --load $HOME/git/ubuntu_config/gconf/gnome-terminal.gconf.xml
-||||||| merged common ancestors
-  sudo add-apt-repository ppa:xorg-edgers/ppa
-  apud
-  api nvidia-* #check version on: http://www.nvidia.com/Download/index.aspx
-  sudo software-properites-gtk
-=======
 	sudo add-apt-repository ppa:xorg-edgers/ppa
 	apud
 	api nvidia-* #check version on: http://www.nvidia.com/Download/index.aspx
 	sudo software-properites-gtk
->>>>>>> cf7e7c1198a720920d7d1e2a48d6cc4afa5fc593
+	gconftool-2 --load $HOME/git/ubuntu_config/gconf/gnome-terminal.gconf.xml
 
 	sudo apt-get autoremove --purge ubuntuone-client-data
 	sudo apt-get autoremove --purge software-center
