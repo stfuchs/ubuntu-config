@@ -1,5 +1,5 @@
 (add-to-list 'load-path "~/git/ubuntu_config/emacs/")
-
+;(load-file "~/ext/emacs/emacs-for-python/epy-init.el")
 ;; --- Hide Init Screen
 (setq inhibit-splash-screen t)
 
@@ -56,8 +56,7 @@
   ido-ignore-buffers ;; ignore these guys
   '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido" "^\*trace"
      "^\*compilation" "^\*GTAGS" "^session\.*" "^\*")
-  ido-work-directory-list '("~/git/care-o-bot/cob_environment_perception_intern"
-                            "~/git/care-o-bot/cob_environment_perception/cob_3d_mapping_common")
+  ido-work-directory-list '("~/git/")
   ido-case-fold  t                 ; be case-insensitive
 
   ido-enable-last-directory-history t ; remember last used dirs
@@ -108,18 +107,10 @@
 
 (global-set-key (kbd "C-x f") 'rename-this-buffer-and-file)
 
-(defun get-above-makefile ()
-  (loop as d = default-directory then
-        (expand-file-name ".." d) if (file-exists-p (expand-file-name "CMakeLists.txt" d)) return d))
-
-;; bind compiling with get-above-makefile to f5
-(global-set-key (kbd "C-x m") (lambda () (interactive) (compile (format "make -j 8 -C %s" (get-above-makefile)))))
-;;(global-set-key (kbd "C-x c") 'compile)
-
 
 ;; --- Customize Layout ---
 (tool-bar-mode -1) ;; the buttons bar
-;;(menu-bar-mode -1) ;; the text bar (graphical and console)
+(menu-bar-mode -1) ;; the text bar (graphical and console)
 (toggle-scroll-bar -1)
 (require 'color-theme)
 (color-theme-initialize)
@@ -139,17 +130,6 @@
 (global-hl-line-mode t) ; turn it on for all modes by default
 
 
-;; --- ROS stuff ---
-(add-to-list 'load-path "/opt/ros/diamondback/ros/tools/rosemacs")
-;;(require 'rosemacs)
-;;(invoke-rosemacs)
-;;(global-set-key "\C-x\C-r" ros-keymap)
-;;(require 'rng-loc)
-;;(condition-case nil ;; error e.g. when running as root
-;;    (push (concat (ros-package-path "rosemacs") "/rng-schemas.xml") rng-schema-locating-files)
-;;  (error nil))
-
-
 ;; --- Auto Modes ---
 (add-to-list 'auto-mode-alist '("\.launch$" . nxml-mode))
 (add-to-list 'auto-mode-alist '("manifest.xml" . nxml-mode))
@@ -157,9 +137,10 @@
 (add-to-list 'auto-mode-alist '("CMakeLists.txt" . cmake-mode))
 (add-to-list 'auto-mode-alist '("\.cmake$" . cmake-mode))
 (add-to-list 'auto-mode-alist '("\.m$" . octave-mode))
+(require 'cython-mode)
 
 ;; --- Git stuff ---
-(add-to-list 'load-path "~/git/git-emacs")
+;(add-to-list 'load-path "~/git/git-emacs")
 ;(require 'git-emacs)
 ;(add-to-list 'load-path "~/.emacs.d")
 ;(require 'git)
