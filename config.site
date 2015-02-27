@@ -1,0 +1,2 @@
+CPPFLAGS=-I$HOME/apps/usr/include
+LDFLAGS=-L$HOME/apps/usr/lib

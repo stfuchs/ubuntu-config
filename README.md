@@ -6,6 +6,10 @@ available, or when software does not need an installation
 	$HOME/apps/usr/bin/
 	$HOME/apps/etc/
 	$HOME/apps/bin/
+	cp config.site $HOME/apps/usr/share/
+	export PYTHONUSERBASE=$HOME/apps/usr
+	wget https://bootstrap.pypa.io/get-pip.py
+	python3 get-pip.py --user
 
 
 ## Things to install manually: ##
