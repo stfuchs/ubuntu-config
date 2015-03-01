@@ -6,6 +6,10 @@ available, or when software does not need an installation
 	$HOME/apps/usr/bin/
 	$HOME/apps/etc/
 	$HOME/apps/bin/
+	cp config.site $HOME/apps/usr/share/
+	export PYTHONUSERBASE=$HOME/apps/usr
+	wget https://bootstrap.pypa.io/get-pip.py
+	python3 get-pip.py --user
 
 
 ## Things to install manually: ##
@@ -32,6 +36,7 @@ available, or when software does not need an installation
 	apud
 	api nvidia-* #check version on: http://www.nvidia.com/Download/index.aspx
 	sudo software-properites-gtk
+	gconftool-2 --load $HOME/git/ubuntu_config/gconf/gnome-terminal.gconf.xml
 
 	sudo apt-get autoremove --purge ubuntuone-client-data
 	sudo apt-get autoremove --purge software-center
