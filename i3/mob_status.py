@@ -94,8 +94,14 @@ status.register("wireless",
 # Format:
 # 42/128G [86G]
 status.register("disk",
+                path="/home/",
+                round_size=1,
+                format="/home: {used}/{total}G",)
+status.register("disk",
                 path="/",
-                format="{used}/{total}G [{avail}G]",)
+                round_size=1,
+                format="/: {used}/{total}G",)
+
 
 
 # Shows mpd status
