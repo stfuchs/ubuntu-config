@@ -103,7 +103,8 @@ cquit='\[\033[0m\]' #cancel color
 
 #PS1="$cbg\\__($cfg1\t$cbg)__($cfg2\u$cquit@$cfg2\h$cbg)__($cfg2\w$cbg)\n \\__$(__git_ps1)\$ $cquit"
 #PS1=$cbg'\\__('$cfg1'\t'$cbg')__('$cfg2'\u'$cquit'@'$cfg2'\h'$cbg')__('$cfg2'\w'$cbg')\n \\__$(__git_ps1 "(\033[0;33m%s\033[1;30m)" )'$cbg'\$ '$cquit
-PS1=$cfg1'\t'$cbg'|'$cfg2'\u'$cquit'@'$cfg2'\h'$cbg'|'$cfg2'\w'$cbg'$(__git_ps1 " (\[\033[0;33m\]%s\[\033[1;30m\]) " )'$cbg'\$ '$cquit
+#PS1=$cfg1'\t'$cbg'|'$cfg2'\u'$cquit'@'$cfg2'\h'$cbg'|'$cfg2'\w'$cbg'$(__git_ps1 " (\[\033[0;33m\]%s\[\033[1;30m\]) " )'$cbg'\$ '$cquit
+PS1=$cfg1'\t '$cfg2'\w'$cbg'$(__git_ps1 " (\[\033[0;33m\]%s\[\033[1;30m\]) " )'$cbg'\$ '$cquit
 ##### Some things to install: #####
 # parallel: http://www.gnu.org/software/parallel/
 # Generic colorizer: http://kassiopeia.juls.savba.sk/~garabik/software/grc.html
