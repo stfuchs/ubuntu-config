@@ -23,7 +23,8 @@ LBLUE="#3498DB"
 #                          ^-- calendar week
 status.register("clock",
                 color=LBLUE,
-                format="%Y-%m-%d %X",
+                #format="%Y-%m-%d %X",
+                format="%Y-%m-%d %H:%M:%S",
                 interval=5,)
 
 
