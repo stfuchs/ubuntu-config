@@ -12,14 +12,14 @@ LBLUE="#3498DB"
 #
 # Note: requires libpulseaudio from PyPI
 status.register("pulseaudio",
-                format="♪ {volume} ",)
+                format="♪ {volume}%",)
 
 
 # Displays clock like this:
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
 status.register("clock",
-                color=LBLUE,
+                #color=LBLUE,
                 format="%Y-%m-%d %X",
                 interval=5,)
 
@@ -86,6 +86,10 @@ status.register("wireless",
     interface="wlan0",
     format_up="{essid} {quality:03.0f}%",)
 """
+
+status.register("shell",
+                command="echo 'Mnt:' && ls /media/$USER/",)
+
 # Shows disk usage of /
 # Format:
 # 42/128G [86G]
@@ -107,6 +111,8 @@ status.register("mpd",
     },)
 """
 
+
+
 # requires psutil
 status.register("mem",
                 color=LBLUE,
@@ -114,14 +120,15 @@ status.register("mem",
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
-status.register("load")
+status.register("load",
+                format="{avg1} {avg5} {avg15} {tasks}",)
 # Shows your CPU temperature, if you have a Intel CPU
 status.register("temp",
                 format="{temp:.0f}°C",)
 
 status.register("cpu_usage",
                 format="CPU: {usage_cpu0:02}% {usage_cpu1:02}% {usage_cpu2:02}% {usage_cpu3:02}%",
-                interval=2)
+                interval=5)
                 #format_all= "{core}:{usage:02}%",)
 
 status.run()
