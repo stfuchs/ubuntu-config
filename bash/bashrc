@@ -15,17 +15,11 @@ alias hcat_emacs='hcat ~/git/ubuntu_config/emacs/my_config.el'
 alias hcat_bash='hcat ~/git/ubuntu_config/bash/bashrc'
 alias compile='g++ -W -Wall -Wextra -pedantic -std=c++0x'
 
-if [ "$HOSTNAME" == "steffen-ubuntu" ]; then
-    alias mm='grc -c /usr/share/grc/conf.gcc -e -s make -j 4'
-else
-    alias mm='grc -c ~/apps/usr/share/grc-1.5/conf.gcc -e -s make -j 8'
-    alias mr='grc -c ~/apps/usr/share/grc-1.5/conf.gcc -e -s rosmake --pjobs=8'
-    alias cm='grc -c ~/apps/usr/share/grc-1.5/conf.gcc -e -s catkin_make'
-    alias gemacs='setsid emacs -q -l ~/git/ubuntu_config/emacs/my_config.el'
-fi
+alias mm='grc -c /usr/share/grc/conf.gcc -e -s make -j 4'
+alias gemacs='setsid emacs -q -l ~/git/ubuntu_config/emacs/my_config.el'
 
 alias rviz='rosrun rviz rviz'
-alias gitk='git log --graph --decorate'
+alias gitk='git log --graph --decorate --pretty=oneline -n 20 --abbrev-commit'
 alias treel='tree -fi'
 alias du='du -h --max-depth=0'
 alias ipy='ipython --pylab'
@@ -39,6 +33,7 @@ alias pdf='evince'
 #   z: zip, dezip
 alias unpack='tar xf'
 alias pack='tar cfz'
+alias copy='xclip -sel clip'
 
 
 # function:
@@ -93,7 +88,6 @@ export PATH=$HOME/apps/usr/bin:$PATH
 export GOPATH=$HOME/gopath
 export PATH=$GOPATH:$GOPATH/bin:/usr/local/go/bin:$PATH
 export MANPATH=$HOME/apps/usr/share/man:$MANPATH
-export GIT_CONFIG=~/git/ubuntu_config/git/config
 
 #export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 cbg='\[\033[1;30m\]' #dark gray

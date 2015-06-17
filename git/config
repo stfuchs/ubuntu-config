@@ -1,4 +1,7 @@
+[core]
+        whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 [alias]
+        st = status
         ci = commit
         co = checkout
 [color]
@@ -6,6 +9,8 @@
         branch = auto
         interactive = auto
         diff = auto
+[merge]
+        tool = kdiff3
 [user]
         name = Steffen Fuchs
         email = st.fuchs.tr@gmail.com

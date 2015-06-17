@@ -9,7 +9,7 @@
     use_system_font = False
     icon_bell = False
     show_titlebar = False
-    font = Monospace 8
+    font = Monospace 9
     scrollback_infinite = True
 [layouts]
   [[default]]
