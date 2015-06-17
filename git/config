@@ -5,12 +5,14 @@
         ci = commit
         co = checkout
 [color]
-        status = always
-        branch = auto
-        interactive = auto
-        diff = auto
+        status = true
+        branch = true
+        interactive = true
+        diff = true
 [merge]
         tool = kdiff3
+[push]
+        default = simple
 [user]
         name = Steffen Fuchs
         email = st.fuchs.tr@gmail.com
