@@ -14,4 +14,5 @@ cp -v terminator/config $HOME/.config/terminator/
 # config git
 cp -v git/config $HOME/.gitconfig
 
-
+# emacs cache
+mkdir -v -p $HOME/.emacs.d/cache
