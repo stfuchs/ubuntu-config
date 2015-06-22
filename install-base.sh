@@ -3,7 +3,7 @@
 if [ ! -f $HOME/.bash_aliases ]; then
     echo "Creating .bash_aliases"
     echo '#!/bin/sh' > $HOME/.bash_aliases
-    echo 'source $HOME/git/ubuntu_config/bash/bashrc' >> $HOME/.bash_aliases
+    echo 'source $HOME/git/ubuntu-config/bash/bashrc' >> $HOME/.bash_aliases
     . $HOME/.bashrc
 fi
 
