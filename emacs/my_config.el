@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/git/ubuntu_config/emacs/")
+(add-to-list 'load-path "~/git/ubuntu-config/emacs/")
 ;(load-file "~/ext/emacs/emacs-for-python/epy-init.el")
 ;; --- Hide Init Screen
 (setq inhibit-splash-screen t)

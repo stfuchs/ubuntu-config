@@ -19,7 +19,7 @@ alias mm='grc -c /usr/share/grc/conf.gcc -e -s make -j 4'
 alias gemacs='setsid emacs -q -l ~/git/ubuntu-config/emacs/my_config.el'
 
 alias rviz='rosrun rviz rviz'
-alias gitk='git log --graph --decorate --pretty=oneline -n 20 --abbrev-commit'
+alias gitk='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias treel='tree -fi'
 alias du='du -h --max-depth=0'
 alias ipy='ipython --pylab'
@@ -34,7 +34,7 @@ alias pdf='evince'
 alias unpack='tar xf'
 alias pack='tar cfz'
 alias copy='xclip -sel clip'
-
+alias lsd='ls -d1 $PWD/*'
 
 # function:
 findheader() { find . -type f -name '*.h' | parallel -k "grep -Hn --color=always '$@' "; }
