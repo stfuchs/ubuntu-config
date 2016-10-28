@@ -23,7 +23,7 @@ available, or when software does not need an installation
 	sudo apt-get install aptitude
 	sudo aptitude install git
 	echo '#!/bin/sh' > $HOME/.bash_aliases
-	echo 'source $HOME/git/ubuntu_config/bash/bashrc' >> $HOME/.bash_aliases
+	echo 'source $HOME/git/ubuntu-config/bash/bashrc' >> $HOME/.bash_aliases
 	source $HOME/.bashrc
 	api build-essential
 
