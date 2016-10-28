@@ -72,11 +72,21 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-git-gutter-mode +1)
 
+;; markdown-mode
+
 ;; --- Customize Layout ---
 (tool-bar-mode -1) ;; the buttons bar
 (menu-bar-mode -1) ;; the text bar (graphical and console)
 (toggle-scroll-bar -1)
 
+(require 'solarized)
+(load-theme 'solarized-dark t)
+(setq solarized-distinct-fringe-background t)
+(setq solarized-high-contrast-mode-line t)
+
+;; powerline
+(require 'powerline)
+(powerline-default-theme)
 
 ;; --- Auto Modes ---
 (add-to-list 'auto-mode-alist '("\.launch$" . nxml-mode))
