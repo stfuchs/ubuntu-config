@@ -20,9 +20,28 @@ available, or when software does not need an installation
 
 ## Things to install on new ubuntu: ##
 
-	sudo apt-get install aptitude
+    sudo apt-get install aptitude
+    sudo aptitude install git
+    ssh-keygen -t rsa -b 4096 -C "st.fuchs.tr@gmail.com"
+    ssh-add ~/.ssh/id_rsa
+    mkdir git
+    git clone git@github.com:stfuchs/ubuntu-config.git git/ubuntu-config
+    cp git/ubuntu-config/git/config ~/.gitconfig
+    echo '#!/bin/sh' > $HOME/.bash_aliases
+    echo 'source $HOME/git/ubuntu-config/bash/bashrc' >> $HOME/.bash_aliases
+    source $HOME/.bashrc
+
     sudo add-apt-repository ppa:ubuntu-elisp/ppa
-    sudo aptitude install emacs-snapshot
+    apud
+    apug
+    api emacs-snapshot
+    api build-essential
+    sudo sh -c 'echo "deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe" >> /etc/apt/sources.list'
+    apud
+    sudo apt-get --allow-unauthenticated install sur5r-keyring
+    apud
+    api i3
+
     wget https://bootstrap.pypa.io/get-pip.py
     python get-pip.py --user
     pip install --user powerline-status
@@ -31,19 +50,10 @@ available, or when software does not need an installation
     mkdir -p ~/.fonts && mv PowerlineSymbols.otf ~/.fonts/
     fc-cache -vf ~/.fonts/
     mkdir -p ~/.config/fontconfig/conf.d && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
-    mkdir -p ~/.config/powerline
+    cp -r git/ubuntu-config/powerline ~/.config/powerline
     
-    sudo aptitude install git
-	echo '#!/bin/sh' > $HOME/.bash_aliases
-	echo 'source $HOME/git/ubuntu-config/bash/bashrc' >> $HOME/.bash_aliases
-	source $HOME/.bashrc
-	api build-essential
 
-	echo "deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe" >> /etc/apt/sources.list
-	apud
-	sudo apt-get --allow-unauthenticated install sur5r-keyring
-	apud
-	api i3
+
 	sudo add-apt-repository ppa:xorg-edgers/ppa
 	apud
 	api nvidia-* #check version on: http://www.nvidia.com/Download/index.aspx
