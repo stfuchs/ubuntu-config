@@ -21,7 +21,19 @@ available, or when software does not need an installation
 ## Things to install on new ubuntu: ##
 
 	sudo apt-get install aptitude
-	sudo aptitude install git
+    sudo add-apt-repository ppa:ubuntu-elisp/ppa
+    sudo aptitude install emacs-snapshot
+    wget https://bootstrap.pypa.io/get-pip.py
+    python get-pip.py --user
+    pip install --user powerline-status
+    wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+    wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+    mkdir -p ~/.fonts && mv PowerlineSymbols.otf ~/.fonts/
+    fc-cache -vf ~/.fonts/
+    mkdir -p ~/.config/fontconfig/conf.d && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+    mkdir -p ~/.config/powerline
+    
+    sudo aptitude install git
 	echo '#!/bin/sh' > $HOME/.bash_aliases
 	echo 'source $HOME/git/ubuntu-config/bash/bashrc' >> $HOME/.bash_aliases
 	source $HOME/.bashrc

@@ -8,7 +8,7 @@ alias aps='aptitude show'
 alias appo='apt-cache policy'
 alias resource='source ~/.bashrc'
 alias ..='cd ..'
-alias em='emacs -nw -q -l ~/git/ubuntu-config/emacs/my_config.el'
+alias em='emacs -nw -q -l ~/git/ubuntu-config/emacs/config-v2.el'
 alias parallel='parallel --gnu'
 alias hcat='pygmentize -f terminal256 -O style=native -g'
 alias hcat_emacs='hcat ~/git/ubuntu-config/emacs/my_config.el'
@@ -88,19 +88,12 @@ export PATH=$HOME/apps/usr/bin:$PATH
 export GOPATH=$HOME/gopath
 export PATH=$GOPATH:$GOPATH/bin:/usr/local/go/bin:$PATH
 export MANPATH=$HOME/apps/usr/share/man:$MANPATH
+#source ~/git/ubuntu-config/bash/prompt
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
 
-#export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-cbg='\[\033[1;30m\]' #dark gray
-cfg1='\[\033[0;33m\]' #yellow
-#cfg2='\[\033[0;32m\]' #green
-#cfg1='\[\033[0;31m\]' #red
-cfg2='\[\033[0;36m\]' #cyan
-cquit='\[\033[0m\]' #cancel color
-
-#PS1="$cbg\\__($cfg1\t$cbg)__($cfg2\u$cquit@$cfg2\h$cbg)__($cfg2\w$cbg)\n \\__$(__git_ps1)\$ $cquit"
-#PS1=$cbg'\\__('$cfg1'\t'$cbg')__('$cfg2'\u'$cquit'@'$cfg2'\h'$cbg')__('$cfg2'\w'$cbg')\n \\__$(__git_ps1 "(\033[0;33m%s\033[1;30m)" )'$cbg'\$ '$cquit
-#PS1=$cfg1'\t'$cbg'|'$cfg2'\u'$cquit'@'$cfg2'\h'$cbg'|'$cfg2'\w'$cbg'$(__git_ps1 " (\[\033[0;33m\]%s\[\033[1;30m\]) " )'$cbg'\$ '$cquit
-PS1=$cfg1'\t '$cfg2'\w'$cbg'$(__git_ps1 " (\[\033[0;33m\]%s\[\033[1;30m\]) " )'$cbg'\$ '$cquit
 ##### Some things to install: #####
 # parallel: http://www.gnu.org/software/parallel/
 # Generic colorizer: http://kassiopeia.juls.savba.sk/~garabik/software/grc.html
