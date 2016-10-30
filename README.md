@@ -47,6 +47,7 @@ available, or when software does not need an installation
     pip install --user powerline-status
     wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
     wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+    #TODO: add fontawesome notes
     mkdir -p ~/.fonts && mv PowerlineSymbols.otf ~/.fonts/
     fc-cache -vf ~/.fonts/
     mkdir -p ~/.config/fontconfig/conf.d && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
@@ -55,8 +56,6 @@ available, or when software does not need an installation
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     api nodejs
     sudo npm install -g i3-style
-    git clone git@github.com:gabrielelana/awesome-terminal-fonts.git ~/git/awesome-terminal-fonts
-    cd ~/git/awesome-terminal-fonts && ./install.sh
 
 	sudo add-apt-repository ppa:xorg-edgers/ppa
 	apud
@@ -64,43 +63,10 @@ available, or when software does not need an installation
 	sudo software-properites-gtk
 	gconftool-2 --load $HOME/git/ubuntu_config/gconf/gnome-terminal.gconf.xml
 
-	sudo apt-get autoremove --purge ubuntuone-client-data
-	sudo apt-get autoremove --purge software-center
-	sudo apt-get autoremove --purge rhythmbox
-	sudo apt-get autoremove --purge totem-common
-	sudo apt-get autoremove --purge thunderbird*
-	sudo apt-get autoremove --purge firefox*
-	sudo apt-get autoremove --purge unity-webapps-common
-	sudo apt-get autoremove --purge zeitgeist-core
-
-	sudo apt-get autoremove --purge compiz compiz-gnome compiz-plugins-default libcompizconfig0
-	sudo apt-get purge unity-scope-home
-	sudo apt-get autoremove --purge deja-dub
-	sudo apt-get autoremove --purge unity
-	sudo apt-get autoremove --purge unity-services
-	sudo apt-get autoremove --purge unity-lens-*
-	sudo apt-get autoremove --purge unity-scope-*
-	sudo apt-get autoremove --purge libunity-misc4
-	sudo apt-get autoremove --purge appmenu-qt*
-	sudo apt-get autoremove --purge overlay-scrollbar*
-	gsettings set org.gnome.desktop.background show-desktop-icons false
-
 	api libxss1 libappindicator1 libindicator7
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg -i google-chrome*.deb
 
-	api texlive texlive-lang-german texlive-latex-extra
-	api python pip
-	sudo easy_install pip
-	api python-dev
-	api libfreetype6-dev libpng-dev gfortran
-	sudo pip install ipython[all]
-	sudo pip install matplotlib[all]
-    
-## Lemonbar:
-    git clone git@github.com:LemonBoy/bar.git ~/git/lemonbar
-    api libxcb1-dev libxcb-randr0-dev libxcb-xinerama0-dev
-    cd ~/git/bar && make
     
 ## On Mac: ##
 	sudo add-apt-repository ppa:mactel-support
