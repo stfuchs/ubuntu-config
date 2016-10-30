@@ -27,14 +27,21 @@
 ; turns on whitespace mode only for tabs
 ; highlights tabs, 80-Column-Rule, trailing whitespaces
 (require 'whitespace)
-;(setq whitespace-style '(face tab-mark lines-tail trailing))
-(setq whitespace-style '(face tab-mark))
+(setq whitespace-style '(face tab-mark lines-tail trailing))
 (global-whitespace-mode t)
 
 (setq show-paren-delay 0)           ; how long to wait?
 (show-paren-mode t)                 ; turn paren-mode on
 (setq show-paren-style 'parenthesis) ; alternatives are 'parenthesis' and 'mixed 'expression
 
+;; company (complete anything)
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+;; company-jedi
+(with-eval-after-load 'company
+  (add-hook 'python-mode-hook
+            (lambda ()
+              (add-to-list 'company-backends 'company-jedi))))
 
 ;; ido makes competing buffers and finding files easier
 ;; http://www.emacswiki.org/cgi-bin/wiki/InteractivelyDoThings
@@ -45,13 +52,6 @@
 (ido-ubiquitous-mode 1)
 (require 'ido-vertical-mode) ;;https://github.com/DarwinAwardWinner/ido-ubiquitous
 (ido-vertical-mode 1)
-
-;; company (complete anything)
-(add-hook 'after-init-hook 'global-company-mode)
-;; company-jedi
-(defun my/python-mode-hook()
-  (add-to-list 'company-backends 'company-jedi))
-(add-hook 'python-mode-hook 'my/python-mode-hook)
 
 ;; web-mode
 (require 'web-mode)
