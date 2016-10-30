@@ -52,7 +52,11 @@ available, or when software does not need an installation
     mkdir -p ~/.config/fontconfig/conf.d && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
     cp -r git/ubuntu-config/powerline ~/.config/powerline
     
-
+    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    api nodejs
+    sudo npm install -g i3-style
+    git clone git@github.com:gabrielelana/awesome-terminal-fonts.git ~/git/awesome-terminal-fonts
+    cd ~/git/awesome-terminal-fonts && ./install.sh
 
 	sudo add-apt-repository ppa:xorg-edgers/ppa
 	apud
@@ -92,7 +96,12 @@ available, or when software does not need an installation
 	api libfreetype6-dev libpng-dev gfortran
 	sudo pip install ipython[all]
 	sudo pip install matplotlib[all]
-
+    
+## Lemonbar:
+    git clone git@github.com:LemonBoy/bar.git ~/git/lemonbar
+    api libxcb1-dev libxcb-randr0-dev libxcb-xinerama0-dev
+    cd ~/git/bar && make
+    
 ## On Mac: ##
 	sudo add-apt-repository ppa:mactel-support
 	sudo apt-get update
