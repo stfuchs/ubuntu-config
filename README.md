@@ -53,7 +53,8 @@ available, or when software does not need an installation
     cp ~/git/ubuntu-config/fontawesome/FontAwesome.otf ~/.fonts/
     cp ~/git/ubuntu-config/fontawesome/10-fontawesome-symbols.conf ~/.config/fontconfig/conf.d/
     fc-cache -vf ~/.fonts/
-    cp -r git/ubuntu-config/powerline ~/.config/powerline
+    cp -r ~/git/ubuntu-config/powerline ~/.config/powerline
+    powerline-daemon --replace
     
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     api nodejs
