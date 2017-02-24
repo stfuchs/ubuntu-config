@@ -14,7 +14,6 @@
 (setq backup-directory-alist `(("." . "~/.emacs.d")))
 
 
-
 ;; --- Set C Style ---
 (setq c-default-style "bsd")
 (setq c-basic-offset 2)
@@ -50,11 +49,14 @@
 (ido-everywhere 1)
 (require 'ido-ubiquitous) ;;https://github.com/DarwinAwardWinner/ido-ubiquitous
 (ido-ubiquitous-mode 1)
-(require 'ido-vertical-mode) ;;https://github.com/DarwinAwardWinner/ido-ubiquitous
-(ido-vertical-mode 1)
+;;(require 'ido-vertical-mode) ;;https://github.com/DarwinAwardWinner/ido-ubiquitous
+;;(ido-vertical-mode 1)
 
 ;; web-mode
 (require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
@@ -63,6 +65,11 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
+(with-eval-after-load 'company
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (setq web-mode-markup-indent-offset 2))))
+
 
 ;; highlight thing under cursor
 (require 'highlight-thing)
