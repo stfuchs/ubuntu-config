@@ -2,6 +2,17 @@
 ;; Use M-x package-list-packages RET to update packages list
 ;; Use M-x package-install RET foo
 ;; List of nice packages: https://github.com/emacs-tw/awesome-emacs
+
+;; On first startup you need to install the following packages:
+;; - ido-completing-read+
+;; - web-mode
+;; - highlight-thing
+;; - magit
+;; - git-gutter+-mode
+;; - solarized-theme
+;; - powerline
+;; - markdown-mode
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
@@ -12,7 +23,6 @@
 
 ;; --- Move backup files to single directory ----
 (setq backup-directory-alist `(("." . "~/.emacs.d")))
-
 
 ;; --- Set C Style ---
 (setq c-default-style "bsd")
@@ -33,24 +43,13 @@
 (show-paren-mode t)                 ; turn paren-mode on
 (setq show-paren-style 'parenthesis) ; alternatives are 'parenthesis' and 'mixed 'expression
 
-;; company (complete anything)
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-;; company-jedi
-(with-eval-after-load 'company
-  (add-hook 'python-mode-hook
-            (lambda ()
-              (add-to-list 'company-backends 'company-jedi))))
-
 ;; ido makes competing buffers and finding files easier
 ;; http://www.emacswiki.org/cgi-bin/wiki/InteractivelyDoThings
 (require 'ido)
-(ido-mode 1) ;;
+(ido-mode 1)
 (ido-everywhere 1)
-(require 'ido-ubiquitous) ;;https://github.com/DarwinAwardWinner/ido-ubiquitous
+(require 'ido-completing-read+) ;;https://github.com/DarwinAwardWinner/ido-ubiquitous
 (ido-ubiquitous-mode 1)
-;;(require 'ido-vertical-mode) ;;https://github.com/DarwinAwardWinner/ido-ubiquitous
-;;(ido-vertical-mode 1)
 
 ;; web-mode
 (require 'web-mode)
@@ -65,21 +64,15 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
-(with-eval-after-load 'company
-  (add-hook 'web-mode-hook
-            (lambda ()
-              (setq web-mode-markup-indent-offset 2))))
-
 
 ;; highlight thing under cursor
 (require 'highlight-thing)
 (global-highlight-thing-mode)
 
 ;; magit and git-gutter
+(require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
-(global-git-gutter-mode +1)
-
-;; markdown-mode
+(global-git-gutter+-mode)
 
 ;; --- Customize Layout ---
 (tool-bar-mode -1) ;; the buttons bar
@@ -90,8 +83,6 @@
 (setq x-underline-at-descent-line t)
 (setq solarized-distinct-fringe-background t)
 (setq solarized-high-contrast-mode-line t)
-(setq solarized-height-minus-1 0.9)
-(set-face-attribute 'default nil :height 100 :width 'ultra-condensed)
 (load-theme 'solarized-dark t)
 
 ;; powerline

@@ -27,6 +27,21 @@ available, or when software does not need an installation
     mkdir git
     git clone git@github.com:stfuchs/ubuntu-config.git git/ubuntu-config
     cp git/ubuntu-config/git/config ~/.gitconfig
+    wget https://bootstrap.pypa.io/get-pip.py
+    sudo -H python get-pip.py
+    sudo -H pip install powerline-status
+
+    cd /tmp
+    wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+    wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+    mkdir -p ~/.fonts && mv PowerlineSymbols.otf ~/.fonts/
+    mkdir -p ~/.config/fontconfig/conf.d && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+    cp ~/git/ubuntu-config/fontawesome/ontawesome-webfont.ttf  ~/.fonts/
+    cp ~/git/ubuntu-config/fontawesome/10-fontawesome-symbols.conf ~/.config/fontconfig/conf.d/
+    fc-cache -vf ~/.fonts/
+    cp -r ~/git/ubuntu-config/powerline ~/.config/powerline
+    powerline-daemon --replace
+
     echo '#!/bin/sh' > $HOME/.bash_aliases
     echo 'source $HOME/git/ubuntu-config/bash/bashrc' >> $HOME/.bash_aliases
     source $HOME/.bashrc
@@ -42,19 +57,6 @@ available, or when software does not need an installation
     apud
     api i3
 
-    wget https://bootstrap.pypa.io/get-pip.py
-    python get-pip.py --user
-    pip install --user powerline-status
-    wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
-    wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-    #TODO: add fontawesome notes
-    mkdir -p ~/.fonts && mv PowerlineSymbols.otf ~/.fonts/
-    mkdir -p ~/.config/fontconfig/conf.d && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
-    cp ~/git/ubuntu-config/fontawesome/FontAwesome.otf ~/.fonts/
-    cp ~/git/ubuntu-config/fontawesome/10-fontawesome-symbols.conf ~/.config/fontconfig/conf.d/
-    fc-cache -vf ~/.fonts/
-    cp -r ~/git/ubuntu-config/powerline ~/.config/powerline
-    powerline-daemon --replace
     
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     api nodejs
