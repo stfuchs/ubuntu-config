@@ -1,26 +1,30 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  inactive_color_offset = 0.52
+  handle_size = 0
+  hide_on_lose_focus = True
+  inactive_color_offset = 1.0
 [keybindings]
-  go_left = <Alt>h
   go_down = <Alt>j
+  go_left = <Alt>h
   go_right = <Alt>l
   go_up = <Alt>k
-[profiles]
-  [[default]]
-    scrollbar_position = hidden
-    background_image = None
-    use_system_font = False
-    icon_bell = False
-    show_titlebar = False
-    font = Monospace 9
-    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    background_image = None
+    font = Monospace 9
+    foreground_color = "#839496"
+    icon_bell = False
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False

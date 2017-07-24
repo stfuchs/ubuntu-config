@@ -56,8 +56,12 @@ available, or when software does not need an installation
     sudo apt-get --allow-unauthenticated install sur5r-keyring
     apud
     api i3
+    mkdir -p ~/.config/i3 && mkdir -p ~/.config/i3status
+    cp ~/git/ubuntu-config/i3/config ~/.config/i3/
+    cp ~/git/ubuntu-config/i3status/config ~/.config/i3status/
+    mkdir -p ~/.config/terminator
+    cp ~/git/ubuntu-config/terminator/config ~/.config/terminator/
 
-    
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     api nodejs
     sudo npm install -g i3-style

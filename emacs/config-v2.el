@@ -3,20 +3,30 @@
 ;; Use M-x package-install RET foo
 ;; List of nice packages: https://github.com/emacs-tw/awesome-emacs
 
-;; On first startup you need to install the following packages:
-;; - ido-completing-read+
-;; - web-mode
-;; - highlight-thing
-;; - magit
-;; - git-gutter+-mode
-;; - solarized-theme
-;; - powerline
-;; - markdown-mode
+(setq package-list
+      '(ido-completing-read+
+        web-mode
+        highlight-thing
+        magit
+        git-gutter+
+        solarized-theme
+        powerline
+        markdown-mode))
 
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
 (package-initialize) ;; You might already have this line
+
+;; this is for automatically installing on startup
+;; fetch the list of packages available
+;;(unless package-archive-contents
+;;  (package-refresh-contents))
+
+;; install the missing packages
+;;(dolist (package package-list)
+;;  (unless (package-installed-p package)
+;;    (package-install package)))
 
 ;; --- Hide Init Screen
 (setq inhibit-splash-screen t)
