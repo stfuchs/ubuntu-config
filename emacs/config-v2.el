@@ -87,9 +87,12 @@
 (toggle-scroll-bar -1)
 
 (require 'solarized)
-(load-theme 'solarized-dark t)
+(setq x-underline-at-descent-line t)
 (setq solarized-distinct-fringe-background t)
 (setq solarized-high-contrast-mode-line t)
+(setq solarized-height-minus-1 0.9)
+(set-face-attribute 'default nil :height 100 :width 'ultra-condensed)
+(load-theme 'solarized-dark t)
 
 ;; powerline
 (require 'powerline)
@@ -98,6 +101,7 @@
 ;; --- Auto Modes ---
 (add-to-list 'auto-mode-alist '("\.launch$" . nxml-mode))
 (add-to-list 'auto-mode-alist '("manifest.xml" . nxml-mode))
+(add-to-list 'auto-mode-alist '("\.xacro" . nxml-mode))
 
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
