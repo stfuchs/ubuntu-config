@@ -16,7 +16,7 @@ alias hcat_bash='hcat ~/git/ubuntu-config/bash/bashrc'
 alias compile='g++ -W -Wall -Wextra -pedantic -std=c++0x'
 
 alias mm='grc -c /usr/share/grc/conf.gcc -e -s make -j 4'
-alias gemacs='setsid emacs -q -l ~/git/ubuntu-config/emacs/config-v2.el'
+alias gemacs='setsid emacs-snapshot -q -l ~/git/ubuntu-config/emacs/config-v2.el'
 
 alias rviz='rosrun rviz rviz'
 alias gitk='git log --graph --decorate --pretty=oneline --abbrev-commit'
@@ -103,3 +103,5 @@ POWERLINE_BASH_SELECT=1
 # print: lpr -P "printername" filename
 # list options: lpoptions -l
 # change options for user: lpoptions -o optionname=value
+
+eval `keychain --eval --agents ssh id_rsa`
