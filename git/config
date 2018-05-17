@@ -4,6 +4,7 @@
         st = status
         ci = commit
         co = checkout
+        l = log --oneline --decorate --graph --abbrev-commit
 [color]
         status = true
         branch = true

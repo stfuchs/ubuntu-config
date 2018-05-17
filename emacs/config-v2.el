@@ -46,6 +46,7 @@
 ; turns on whitespace mode only for tabs
 ; highlights tabs, 80-Column-Rule, trailing whitespaces
 (require 'whitespace)
+(setq whitespace-line-column 120)
 (setq whitespace-style '(face tab-mark lines-tail trailing))
 (global-whitespace-mode t)
 
