@@ -5,6 +5,7 @@
         ci = commit
         co = checkout
         l = log --oneline --decorate --graph --abbrev-commit
+        pr = "!f() { git fetch $1 pull/$2/head:pr/$2 && git checkout pr/$2; }; f"
 [color]
         status = true
         branch = true
