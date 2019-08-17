@@ -1,4 +1,6 @@
 {
+    "spaces": 1,
+    "outer_padding": 0,
     "segments": {
         "left": [
             {

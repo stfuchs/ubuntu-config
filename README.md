@@ -26,7 +26,7 @@ available, or when software does not need an installation
     ssh-add ~/.ssh/id_rsa
     mkdir git
     git clone git@github.com:stfuchs/ubuntu-config.git git/ubuntu-config
-    cp git/ubuntu-config/git/config ~/.gitconfig
+    ln -s git/ubuntu-config/git/config ~/.gitconfig
     wget https://bootstrap.pypa.io/get-pip.py
     sudo -H python get-pip.py
     sudo -H pip install powerline-status
@@ -39,7 +39,7 @@ available, or when software does not need an installation
     cp ~/git/ubuntu-config/fontawesome/fontawesmoe-webfont.ttf  ~/.fonts/
     cp ~/git/ubuntu-config/fontawesome/10-fontawesome-symbols.conf ~/.config/fontconfig/conf.d/
     fc-cache -vf ~/.fonts/
-    cp -r ~/git/ubuntu-config/powerline ~/.config/powerline
+    ln -s ~/git/ubuntu-config/powerline ~/.config/powerline
     powerline-daemon --replace
 
     echo '#!/bin/sh' > $HOME/.bash_aliases
