@@ -36,7 +36,7 @@ available, or when software does not need an installation
     wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
     mkdir -p ~/.fonts && mv PowerlineSymbols.otf ~/.fonts/
     mkdir -p ~/.config/fontconfig/conf.d && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
-    cp ~/git/ubuntu-config/fontawesome/fontawesmoe-webfont.ttf  ~/.fonts/
+    cp ~/git/ubuntu-config/fontawesome/fontawesome-webfont.ttf  ~/.fonts/
     cp ~/git/ubuntu-config/fontawesome/10-fontawesome-symbols.conf ~/.config/fontconfig/conf.d/
     fc-cache -vf ~/.fonts/
     ln -s ~/git/ubuntu-config/powerline ~/.config/powerline
